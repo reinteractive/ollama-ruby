@@ -7,8 +7,8 @@ module Ollama
     format :json
 
     # Constructor with keyword arguments for enhanced flexibility
-    def initialize(host: 'localhost', port: 11434, timeout: 60)
-      self.class.base_uri "http://#{host}:#{port}/api"
+    def initialize(host: 'http://localhost', port: 11434, timeout: 60)
+      self.class.base_uri "#{host}:#{port}/api"
       @options = { timeout: timeout }
     end
 
@@ -99,7 +99,7 @@ module Ollama
     def generate_embeddings(model:, prompt:, options: {})
       validate_model_and_prompt!(model, prompt) # Validate inputs
       body = { model: model, prompt: prompt }.merge(options)
-      
+
       response = safe_post_request('/embeddings', body)
       response.parsed_response['embedding']
     rescue => e
@@ -143,6 +143,3 @@ module Ollama
     end
   end
 end
-
-client = Ollama::ApiClient.new(host: 'localhost', port: 11434, timeout: 60)
-client.generate(options: {model: 'llama2', prompt: 'Hi', stream: false})
