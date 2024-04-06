@@ -34,3 +34,10 @@ GenerateSchema = Dry::Schema.Params do
   optional(:raw).maybe(:bool)
   optional(:keep_alive).maybe(:string)
 end
+
+NameRequiredSchema = Dry::Schema.Params do
+  required(:name).filled(:string)
+  optional(:modelfile).maybe(:string)
+  optional(:stream).maybe(:bool)
+  optional(:path).maybe(:bool)
+end

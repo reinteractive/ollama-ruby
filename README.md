@@ -1,31 +1,56 @@
-# Ollama
+# Ollama-ruby
 
-TODO: Delete this and the text below, and describe your gem
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ollama`. To experiment with that code, run `bin/console` for an interactive prompt.
+Here we have a simple wrapper for the [Ollama API](https://github.com/ollama/ollama/blob/main/docs/api.md). We covered almost all the endpoints and we still working to improve some parts.
 
 ## Installation
 
-TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
-
 Install the gem and add to the application's Gemfile by executing:
 
-    $ bundle add UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
+    $ bundle add ollama_ruby
 
 If bundler is not being used to manage dependencies, install the gem by executing:
 
-    $ gem install UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
+    $ gem install ollama_ruby
 
 ## Usage
 
-TODO: Write usage instructions here
+After install the gem, you can create a new client and interact with the Ollama endpoints already implemented like the example below:
+
+```ruby
+    # host: 'http://localhost', port: 11434, timeout: 60
+    client = Ollama::ApiClient.new
+
+    client.list_local_models # it'll returns something like this:
+    {
+        "models"=>
+        [{
+            "name"=>"llama2:latest",
+            "model"=>"llama2:latest",
+            "modified_at"=>"2024-04-05T23:19:28.167292344-03:00",
+            "size"=>3826793677,
+            "digest"=>"78e26419b4469263f75331927a00a0284ef6544c1975b826b15abdaef17bb962",
+            "details"=>{
+                "parent_model"=>"", "format"=>"gguf", "family"=>"llama", "families"=>["llama"], "parameter_size"=>"7B", "quantization_level"=>"Q4_0"
+            }
+        }]
+    }
+```
+
+The covered endpoints now are:
+* Generate a completion
+* Generate a chat completion
+* Create a Model
+* List Local Models
+* Show Model Information
+* Copy a Model
+* Delete a Model
+* Pull a Model
+* Generate Embeddings
 
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/ollama.
+Bug reports and pull requests are welcome on GitHub at https://github.com/reinteractive/ollama-ruby.

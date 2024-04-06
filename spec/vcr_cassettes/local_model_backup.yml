@@ -1,0 +1,31 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:11434/api/tags
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 06 Apr 2024 02:48:32 GMT
+      Content-Length:
+      - '1671'
+    body:
+      encoding: UTF-8
+      string: '{"models":[{"name":"llama2:latest","model":"llama2:latest","modified_at":"2024-04-05T23:19:28.167292344-03:00","size":3826793677,"digest":"78e26419b4469263f75331927a00a0284ef6544c1975b826b15abdaef17bb962","details":{"parent_model":"","format":"gguf","family":"llama","families":["llama"],"parameter_size":"7B","quantization_level":"Q4_0"}},{"name":"mario:latest","model":"mario:latest","modified_at":"2024-04-05T23:24:34.48729045-03:00","size":3826793787,"digest":"291f46d2fa687dfaff45de96a8cb6e32707bc16ec1e1dfe8d65e9634c34c660c","details":{"parent_model":"","format":"gguf","family":"llama","families":["llama"],"parameter_size":"7B","quantization_level":"Q4_0"}},{"name":"mario:latest-backup","model":"mario:latest-backup","modified_at":"2024-04-05T23:45:54.857288904-03:00","size":3826793787,"digest":"291f46d2fa687dfaff45de96a8cb6e32707bc16ec1e1dfe8d65e9634c34c660c","details":{"parent_model":"","format":"gguf","family":"llama","families":["llama"],"parameter_size":"7B","quantization_level":"Q4_0"}},{"name":"mistral:latest","model":"mistral:latest","modified_at":"2024-04-04T17:26:08.778518252-03:00","size":4109865159,"digest":"61e88e884507ba5e06c49b40e6226884b2a16e872382c2b44a42f2d119d804a5","details":{"parent_model":"","format":"gguf","family":"llama","families":["llama"],"parameter_size":"7B","quantization_level":"Q4_0"}},{"name":"ruby-dev:latest","model":"ruby-dev:latest","modified_at":"2024-04-04T18:20:44.49851904-03:00","size":4109865260,"digest":"adc1127fa75a8834111b4252fb1fc6bfe61f30a3e11be6c762770d13a80d7245","details":{"parent_model":"","format":"gguf","family":"llama","families":["llama"],"parameter_size":"7B","quantization_level":"Q4_0"}}]}'
+  recorded_at: Sat, 06 Apr 2024 02:48:32 GMT
+recorded_with: VCR 6.2.0
