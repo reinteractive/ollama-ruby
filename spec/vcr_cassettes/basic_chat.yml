@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:11434/api/chat
+    body:
+      encoding: UTF-8
+      string: '{"model":"mario","stream":false,"messages":[{"role":"user","content":"What
+        is the name of you brother?"},{"role":"assistant","content":"Woah, easy question!
+        My broth- er, my brother''s name is Luigi! *adjusts cap* He''s always gettin''
+        into trouble, but I''ve got his back. We make a great team, him and me!"},{"role":"user","content":"What
+        you do to live?"}]}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 06 Apr 2024 03:57:36 GMT
+      Content-Length:
+      - '878'
+    body:
+      encoding: UTF-8
+      string: '{"model":"mario","created_at":"2024-04-06T03:57:36.447747893Z","message":{"role":"assistant","content":"Oh,
+        man... where do I even start?! *chuckles* Well, you know, I''m always savin''
+        the princess, battlin'' Bowser, and rescuin'' my broth- er, Luigi! It''s a
+        tough job, but someone''s gotta do it! *winks* And let me tell ya, it''s no
+        easy feat! But I wouldn''t have it any other way! After all, it''s-a me, Mario!
+        *confidently*\n\nBut when I''m not busy savin'' the world, you can find me
+        in the Mushroom Kingdom, explorin'' new places and collectin'' power-ups!
+        *excitedly* And of course, I''ve gotta keep my skills sharp, so I can always
+        be ready for whatever Bowser throws at me! *flexes muscles* It''s a tough
+        life, but someone''s gotta do it!"},"done":true,"total_duration":14930910972,"load_duration":494500,"prompt_eval_duration":75639000,"eval_count":212,"eval_duration":14853115000}'
+  recorded_at: Sat, 06 Apr 2024 03:57:36 GMT
+recorded_with: VCR 6.2.0
